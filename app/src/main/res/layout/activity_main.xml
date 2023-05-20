@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/heading_report_generate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/nunito_sans_extra_bold"
+        android:text="Attendance Report Generator"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_roll_number_outside"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:errorEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/heading_report_generate">
+
+        <EditText
+            android:id="@+id/search_roll_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_search_layout"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:hint="Enter the id..."
+            android:inputType="number"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@null" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <Spinner
+        android:id="@+id/month_spinner"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_roll_number_outside"/>
+
+    <TextView
+        android:gravity="center_horizontal"
+        android:id="@+id/year_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        android:layout_marginTop="24dp"
+        android:text="Year"
+        android:layout_marginStart="24dp"
+        android:textSize="16sp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_roll_number_outside"/>
+
+    <Button
+        android:id="@+id/year_button"
+        android:backgroundTint="@color/beige"
+        android:text="Year"
+        android:onClick="selectYear"
+        android:layout_marginTop="16dp"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/year_view"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/generate_report_button"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:background = "@color/navy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/year_button"
+        android:layout_marginTop="56dp"
+        android:textColor="#FFFFFF"
+        android:text="Generate"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/clear_number_button"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:background="#F1EDED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/year_button"
+        android:layout_marginTop="56dp"
+        android:textColor="@color/beige"
+        android:text="Clear"
+        />
+
+
+
+    <TextView
+        android:id="@+id/name_view"
+        android:layout_width="0dp"
+        android:fontFamily="@font/nunito_sans_bold"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_margin="32dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/generate_report_button"/>
+
+
+    <Button
+        android:id="@+id/generatePDFButton"
+        android:backgroundTint="@color/navy"
+        android:visibility="invisible"
+        android:text="PDF"
+        android:layout_margin="16dp"
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="maroon">#89375F</color>
+    <color name="orange">#FF5E0B</color>
+    <color name="green">#98D8AA</color>
+    <color name="yellow">#F7D060</color>
+    <color name="grey">#1C181818</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="red">#E76161</color>
+    <color name="navy">#537188</color>
+    <color name="beige">#CBB279</color>
+
+
+</resources>

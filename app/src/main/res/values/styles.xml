@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AlertDialogStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@color/navy</item>  // you can change the color of the yearPiker dialog
+        <item name="android:textColorPrimary">@color/navy</item> // you can change the color of the yearPiker dialog
+    </style>
+</resources>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/scrollView">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/scrollView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/attendanceLogo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/navy" />
+
+        <TextView
+            android:id="@+id/attendanceHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/nunito_sans_extra_bold"
+            android:text="Generate Report"
+            android:textColor="@color/maroon"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/attendanceLogo"
+            app:layout_constraintStart_toEndOf="@id/attendanceLogo"
+            app:layout_constraintTop_toTopOf="@id/attendanceLogo" />
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox"
+            app:layout_constraintTop_toBottomOf="@id/attendanceLogo" />
+
+        <TextView
+            android:id="@+id/studentRollNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="Roll.No"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox"
+            app:layout_constraintTop_toBottomOf="@id/studentName" />
+
+        <TextView
+            android:id="@+id/studentTotalAttendance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="Total Attendance"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox"
+            app:layout_constraintTop_toBottomOf="@id/studentRollNumber" />
+
+        <TextView
+            android:id="@+id/studentPercentageAttendance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="Percentage"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox"
+            app:layout_constraintTop_toBottomOf="@id/studentTotalAttendance" />
+
+        <TextView
+            android:id="@+id/studentAttendanceDates"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:fontFamily="@font/calibri_regular"
+            android:text="Dates"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox"
+            app:layout_constraintTop_toBottomOf="@id/studentPercentageAttendance" />
+
+        <lecho.lib.hellocharts.view.PieChartView
+            android:id="@+id/chart"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:layout_margin="32dp"
+            app:layout_constraintTop_toBottomOf="@id/studentAttendanceDates"
+            app:layout_constraintBottom_toBottomOf="@id/innerBox"
+            app:layout_constraintEnd_toEndOf="@id/innerBox"
+            app:layout_constraintStart_toStartOf="@id/innerBox" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine90"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <Button
+        android:id="@+id/downloadButton"
+        style="@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:backgroundTint="#D1D1D1"
+        android:text="Download"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLine90" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
