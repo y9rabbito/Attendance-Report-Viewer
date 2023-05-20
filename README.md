@@ -1,5 +1,5 @@
 # Attendance-Report-Viewer
-A android application which show the attendance report for specific student on selection.
+An android application which show the attendance report for specific student on selection.
 This android application is created for the project of my final sem in university.
 
 This application fetch data from a remote api on specific response in which they can view their month wise response sheet attendance.
